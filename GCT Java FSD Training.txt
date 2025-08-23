@@ -376,11 +376,40 @@ http://localhost:8081/PatientRM_war/enroll?patientId=drftgyhu7890&patientName=Su
 
 
 
+	Task:
+		Build webapp of loan offers where you can see loanName, type, roi. now to implement following functionalities
+		1. Add new loan via Servlet
+		2. View loans
+		3. Enable EmiCalculator in each loan offer which receives principle amount and tenure as user inputs via text box and provide EMI amount using Custom Tag (findemi principle="" tenure="")
 
 
 
 
 
+	Webapp with MySQL:
+		MySQL connector
+		
+	Steps to contact db:
+		register driver
+		establish connection
+		Create Statement
+		Write a query
+		execute query
+
+	File upload:
+		location: D:\Course backups\Java\TechnoICT GnanamaniAug2025\Execution\uploaded
+	JSP:
+		type: input type="file"
+		
+		form: encrypyt="multipart/form-data"
+		
+	Servlet:
+		@WebServlet
+		@MultiPartConfig
+		
+		Paths
+		Part
+		File
 
 
 

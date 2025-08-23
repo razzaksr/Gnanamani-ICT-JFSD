@@ -15,17 +15,18 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="gct" %>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/fmt" prefix="fmt" %>
     <%@ taglib uri="/WEB-INF/health.tld" prefix="richard" %>
-<%--    <% List<Patient> records = (List<Patient>) request.getAttribute("people");%>--%>
+<%--    <% List<data> records = (List<data>) request.getAttribute("people");%>--%>
     <a href="admit.jsp"> Admit new Via Servlet</a>
-    <a href="admitbean.jsp"> Admit new Via JSP</a>
-    <a href="disable">Logout</a>
+<%--    <a href="admitbean.jsp"> Admit new Via JSP</a>--%>
+<%--    <a href="disable">Logout</a>--%>
     <table>
         <thead>
             <tr>
-                <th>Patient Id</th>
-                <th>Patient Name</th>
-                <th>Patient Weight</th>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Weight</th>
                 <th>BMI</th>
+                <th>QR</th>
             </tr>
         </thead>
         <tbody>
@@ -42,6 +43,7 @@
                             <td>
                                 <richard:bmi height="${temp.height}" weight="${temp.weight}"/>
                             </td>
+                            <td>${temp.qrCode}</td>
                         </tr>
                     </gct:forEach>
                 </gct:when>
@@ -51,7 +53,7 @@
             </gct:choose>
 
 <%--            <% if (records.size() > 0) {%>--%>
-<%--                <%for(Patient temp : records){%>--%>
+<%--                <%for(data temp : records){%>--%>
 <%--                <tr>--%>
 <%--                    <td><% out.print(temp.getPatientId());%></td>--%>
 <%--                    <td><% out.print(temp.getPatientName());%></td>--%>
@@ -62,7 +64,7 @@
 <%--                    <p>No PAtients to be listed</p>--%>
 <%--                <%}%>--%>
 <%--            <% if (records.size() > 0) {%>--%>
-<%--                <%for(Patient temp : records){%>--%>
+<%--                <%for(data temp : records){%>--%>
 <%--                    <tr>--%>
 <%--                        <td><%=temp.getPatientId()%></td>--%>
 <%--                        <td><%=temp.getPatientName()%></td>--%>

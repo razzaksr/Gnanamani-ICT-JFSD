@@ -12,7 +12,7 @@
     <title>Session Check</title>
 </head>
 <body>
-    <h1>Patient Count</h1>
+    <h1>data Count</h1>
     <%
         List<Patient> temp = (List<Patient>)session.getAttribute("people");
         out.print(temp.size());

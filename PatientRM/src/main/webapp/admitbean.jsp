@@ -8,7 +8,7 @@
 <%@ page isELIgnored="false" contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Patient Admission</title>
+    <title>data Admission</title>
 </head>
 <body>
     <form action="beanhandle.jsp" method="post">
