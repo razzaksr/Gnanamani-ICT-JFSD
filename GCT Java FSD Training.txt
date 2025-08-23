@@ -412,7 +412,7 @@ http://localhost:8081/PatientRM_war/enroll?patientId=drftgyhu7890&patientName=Su
 		File
 
 
-
+	Paient CRUD with jsp, jstl's sql tag, mysql
 
 
 

@@ -27,6 +27,7 @@
                 <th>Weight</th>
                 <th>BMI</th>
                 <th>QR</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -35,7 +36,9 @@
                     <gct:forEach var="temp" items="${sessionScope.people}">
                         <tr>
                             <td>${temp.patientId}</td>
-                            <td style="color: brown">${temp.patientName}</td>
+                            <td style="color: brown">
+                                <a href="edit.jsp?key=${temp.patientId}">${temp.patientName}</a>
+                            </td>
                             <td style="color: blue">
                                 <fmt:formatNumber pattern="##.##" value="${temp.weight}" />
 <%--                                        <fmt:formatNumber type="currency" value="${temp.weight}" />--%>
@@ -44,6 +47,9 @@
                                 <richard:bmi height="${temp.height}" weight="${temp.weight}"/>
                             </td>
                             <td>${temp.qrCode}</td>
+                            <td>
+                                <a href="delete?key=${temp.patientId}">Delete</a>
+                            </td>
                         </tr>
                     </gct:forEach>
                 </gct:when>

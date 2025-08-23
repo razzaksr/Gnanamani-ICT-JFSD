@@ -45,4 +45,42 @@ public class PatientDao {
         conn.close();
         return patients;
     }
+    public void update(Patient patient) {
+        try {
+            Connection con = DbUtil.getConnection();
+            String qry = "update patients set patientname=?, age=?, height=?, weight=?, contact=?, qr=? where patientid=?";
+            PreparedStatement pstmt = con.prepareStatement(qry);
+            pstmt.setString(1, patient.getPatientName());
+            pstmt.setInt(2, patient.getAge());
+            pstmt.setDouble(3, patient.getHeight());
+            pstmt.setDouble(4, patient.getWeight());
+            pstmt.setLong(5, patient.getContact());
+            pstmt.setString(6, patient.getQrCode());
+            pstmt.setInt(7, patient.getPatientId());
+            int output = pstmt.executeUpdate();
+            if(output>0)
+                System.out.println("Patient has been updated");
+            else
+                System.out.println("Patient has NOT been updated");
+            con.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void  deletePatient(int patientId) {
+        try {
+            Connection conn = DbUtil.getConnection();
+            String qry = "delete from patients where patientid=?";
+            PreparedStatement pstmt = conn.prepareStatement(qry);
+            pstmt.setInt(1, patientId);
+            int output = pstmt.executeUpdate();
+            if(output>0)
+                System.out.println("Patient has been deleted");
+            else
+                System.out.println("Patient has NOT been deleted");
+            conn.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
