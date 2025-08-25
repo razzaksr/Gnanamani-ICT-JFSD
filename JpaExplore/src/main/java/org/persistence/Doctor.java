@@ -4,6 +4,14 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name="practitioner")
+@NamedStoredProcedureQuery(
+        name = "Doctor.getDepartmentDoctors",
+        procedureName = "get_department_doctors",
+        parameters = {
+                @StoredProcedureParameter(mode = ParameterMode.IN, name = "p_dept", type = String.class)
+        },
+        resultClasses = Doctor.class
+)
 public class Doctor {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="emp_id")

@@ -16,9 +16,9 @@ public class PersistenceQueryExecution {
         em.getTransaction().begin();
 
         // Read All Doctors via Jakarta Persistence Query Language
-//        Query query = (Query) em.createQuery("from Doctor", Doctor.class);
-//        List<Doctor> doctors = query.getResultList();
-//        System.out.println(doctors);
+        Query query = (Query) em.createQuery("from Doctor", Doctor.class);
+        List<Doctor> doctors = query.getResultList();
+        System.out.println(doctors);
 
         // Read All Doctor's name via JPQL
 //        Query query = (Query) em.createQuery("select doctorName from Doctor", String.class);
@@ -38,11 +38,11 @@ public class PersistenceQueryExecution {
 //        }
 
         // Read specific rows
-        Query query = (Query) em.createQuery("from Doctor where experience between :start and :end", Doctor.class);
-        query.setParameter("start", 8);
-        query.setParameter("end", 15);
-        List<Doctor> doctors = query.getResultList();
-        System.out.println(doctors);
+//        Query query = (Query) em.createQuery("from Doctor where experience between :start and :end", Doctor.class);
+//        query.setParameter("start", 8);
+//        query.setParameter("end", 15);
+//        List<Doctor> doctors = query.getResultList();
+//        System.out.println(doctors);
 
         em.getTransaction().commit();
         em.close();

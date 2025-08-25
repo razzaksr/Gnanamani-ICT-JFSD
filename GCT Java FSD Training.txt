@@ -399,6 +399,7 @@ http://localhost:8081/PatientRM_war/enroll?patientId=drftgyhu7890&patientName=Su
 	File upload:
 		location: D:\Course backups\Java\TechnoICT GnanamaniAug2025\Execution\uploaded
 	JSP:
+
 		type: input type="file"
 		
 		form: encrypyt="multipart/form-data"
@@ -416,3 +417,14 @@ http://localhost:8081/PatientRM_war/enroll?patientId=drftgyhu7890&patientName=Su
 
 
 
+
+
+
+	JPA, 	Hibernate
+		JPQL
+		HQL
+
+	Stored Procedure
+		1. MySQL create proicedure
+		2. Create NamedStoredPRocedure in Entity class
+		3. Using JPQL call the procedure

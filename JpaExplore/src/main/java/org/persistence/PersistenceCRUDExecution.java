@@ -11,9 +11,9 @@ public class PersistenceCRUDExecution {
 
         // transient State
         Doctor doctor = new Doctor();
-        doctor.setDoctorName("Abinesh");
-        doctor.setDepartment("Psychology");
-        doctor.setExperience(4);
+        doctor.setDoctorName("Anusha");
+        doctor.setDepartment("Neurology");
+        doctor.setExperience(6);
 
         // Transaction begin
         em.getTransaction().begin();
@@ -37,8 +37,8 @@ public class PersistenceCRUDExecution {
 //        em.remove(exists);
 
         // Read
-        Doctor exists = em.find(Doctor.class,3);
-        System.out.println(exists);
+//        Doctor exists = em.find(Doctor.class,3);
+//        System.out.println(exists);
 
         // Transaction end for commit
         em.getTransaction().commit();
