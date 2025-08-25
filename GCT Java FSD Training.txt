@@ -428,3 +428,12 @@ http://localhost:8081/PatientRM_war/enroll?patientId=drftgyhu7890&patientName=Su
 		1. MySQL create proicedure
 		2. Create NamedStoredPRocedure in Entity class
 		3. Using JPQL call the procedure
+
+
+
+	JPA Mapping for Relationshps
+	One to one
+	one to many
+	many to one
+	many to many
+
