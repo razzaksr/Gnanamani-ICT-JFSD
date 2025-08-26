@@ -8,6 +8,7 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="hibernate.show_sql">true</property>
         <!-- Entity classes -->
+        <mapping class="org.persistence.Doctor"/>
         <mapping class="org.persistence.hbm.Bus"/>
         <mapping class="org.persistence.hbm.Candidate"/>
     </session-factory>

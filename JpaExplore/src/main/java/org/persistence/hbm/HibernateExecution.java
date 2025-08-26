@@ -16,13 +16,13 @@ public class HibernateExecution {
         Transaction tx = session.beginTransaction();
 
         // Create new Bus along with Students
-        Candidate candidate1 = new Candidate(620822243002L,"Abinesh","AInDS",9876545676L);
-        Candidate candidate2 = new Candidate(620822243009L,"Anusha","AInDS",987656787656L);
-        Candidate candidate3 = new Candidate(620822243123L,"Yesani","AInDS",98765678765L);
-        Candidate candidate4 = new Candidate(620822243118L,"Vignesh","IT",6789876898789L);
+        Candidate candidate1 = new Candidate(620822243172L,"Vikas","CSE",9876545676L);
+        Candidate candidate2 = new Candidate(620822244001L,"Senthil","IT",876567876876L);
+        Candidate candidate3 = new Candidate(620822243092L,"Noorul","EEE",45678767865L);
+        Candidate candidate4 = new Candidate(620822243102L,"Vijay","Mech",65456787678L);
         List<Candidate> students = Stream.of(candidate1,candidate2,candidate3,candidate4).collect(Collectors.toList());
 
-        Bus bus = new Bus("tn30M9988",28,"Kenny",98765678833L);
+        Bus bus = new Bus("tn10M8668",45,"Mahesh",7654567876546L);
         bus.setPassangers(students);
 
         candidate1.setBus(bus);

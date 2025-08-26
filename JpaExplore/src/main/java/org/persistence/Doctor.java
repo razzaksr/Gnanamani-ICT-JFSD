@@ -33,6 +33,12 @@ public class Doctor {
                 '}'+"\n";
     }
 
+    public Doctor(String doctorName, String department, int experience) {
+        this.doctorName = doctorName;
+        this.department = department;
+        this.experience = experience;
+    }
+
     public Doctor(int doctorId, String doctorName, String department, int experience) {
         this.doctorId = doctorId;
         this.doctorName = doctorName;
