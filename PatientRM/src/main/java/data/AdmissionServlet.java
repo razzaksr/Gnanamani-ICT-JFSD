@@ -1,5 +1,7 @@
 package data;
 
+import data.hiber.HiberORM;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -44,7 +46,9 @@ public class AdmissionServlet extends HttpServlet {
 
         // insert into table by calling create DAO fun
         try {
-            new PatientDao().createPatient(obj);
+            // jdbc call
+//            new PatientDao().createPatient(obj);
+            new HiberORM().createPatient(obj);
             RequestDispatcher rd = req.getRequestDispatcher("/admit.jsp");
             rd.forward(req, response);
         } catch (Exception e) {

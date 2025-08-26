@@ -7,7 +7,23 @@
   <version>1.0-SNAPSHOT</version>
   <name>PatientRM Maven Webapp</name>
   <url>http://maven.apache.org</url>
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+    </properties>
   <dependencies>
+      <!-- https://mvnrepository.com/artifact/org.hibernate.orm/hibernate-core -->
+      <dependency>
+          <groupId>org.hibernate.orm</groupId>
+          <artifactId>hibernate-core</artifactId>
+          <version>7.1.0.Final</version>
+      </dependency>
+      <!-- https://mvnrepository.com/artifact/jakarta.persistence/jakarta.persistence-api -->
+      <dependency>
+          <groupId>jakarta.persistence</groupId>
+          <artifactId>jakarta.persistence-api</artifactId>
+          <version>3.2.0</version>
+      </dependency>
       <!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
       <dependency>
           <groupId>com.mysql</groupId>

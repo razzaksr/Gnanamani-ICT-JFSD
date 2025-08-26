@@ -1,5 +1,7 @@
 package data;
 
+import data.hiber.HiberORM;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -15,7 +17,9 @@ public class ViewServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         try {
-            List<Patient> received = new PatientDao().getPatients();
+            // jdbc call
+//            List<Patient> received = new PatientDao().getPatients();
+            List<Patient> received = new HiberORM().getPatients();
             HttpSession session = req.getSession(true);
             session.setAttribute("people", received);
             RequestDispatcher rd = req.getRequestDispatcher("/view.jsp");

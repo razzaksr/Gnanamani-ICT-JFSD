@@ -15,7 +15,7 @@
     <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="deva" %>
 <%--    <h1>${param.key}</h1>--%>
     <deva:setDataSource var="ashish" driver="com.mysql.cj.jdbc.Driver" url="jdbc:mysql://localhost:3306/gnanamani" user="root" password="Razak@123" />
-    <deva:query var="extracted" dataSource="${ashish}" sql="select * from patients where patientid=?" >
+    <deva:query var="extracted" dataSource="${ashish}" sql="select * from patient where patientid=?" >
         <deva:param value="${param.key}"/>
     </deva:query>
     <gct:forEach var="each" items="${extracted.rows}">

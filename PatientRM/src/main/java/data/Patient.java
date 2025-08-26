@@ -1,7 +1,14 @@
 package data;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
 // bean class
+@Entity
 public class Patient {
+    @Id @GeneratedValue(strategy= GenerationType.IDENTITY)
     private int patientId;
     private String patientName;
     private double weight;

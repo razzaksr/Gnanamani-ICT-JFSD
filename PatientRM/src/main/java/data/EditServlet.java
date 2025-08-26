@@ -1,5 +1,7 @@
 package data;
 
+import data.hiber.HiberORM;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -41,7 +43,9 @@ public class EditServlet extends HttpServlet {
         // write/ create uploaded file physically in the uploaded directory
         filePart.write(filePath);
         obj.setQrCode(filePath);
-        new PatientDao().update(obj);
+        // jdbc call
+//        new PatientDao().update(obj);
+        new HiberORM().update(obj);
         resp.sendRedirect("/PatientRM_war/view");
     }
 }

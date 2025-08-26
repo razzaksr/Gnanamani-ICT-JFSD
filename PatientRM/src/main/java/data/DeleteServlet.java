@@ -1,5 +1,7 @@
 package data;
 
+import data.hiber.HiberORM;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,7 +14,8 @@ public class DeleteServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int key =  Integer.parseInt(req.getParameter("key"));
-        new PatientDao().deletePatient(key);
+//        new PatientDao().deletePatient(key); // jdbc call
+        new HiberORM().deletePatient(key);
         resp.sendRedirect("/PatientRM_war/view");
     }
 }
