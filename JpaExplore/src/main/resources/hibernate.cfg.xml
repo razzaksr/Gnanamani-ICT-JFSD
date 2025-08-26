@@ -11,5 +11,13 @@
         <mapping class="org.persistence.Doctor"/>
         <mapping class="org.persistence.hbm.Bus"/>
         <mapping class="org.persistence.hbm.Candidate"/>
+
+        <mapping class="org.persistence.lock.SavingsAccount" />
+        <mapping class="org.persistence.embedscollect.Professor"/>
+        <mapping class="org.persistence.embedscollect.Subject"/>
+        <mapping class="org.persistence.embedscollect.Lecturer"/>
+        <mapping class="org.persistence.inheritance.Google" />
+        <mapping class="org.persistence.inheritance.YouTube" />
+        <mapping class="org.persistence.inheritance.Drive" />
     </session-factory>
 </hibernate-configuration>
