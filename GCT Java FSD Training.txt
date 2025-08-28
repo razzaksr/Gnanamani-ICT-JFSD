@@ -425,7 +425,14 @@ http://localhost:8081/PatientRM_war/enroll?patientId=drftgyhu7890&patientName=Su
 		HQL
 
 	Stored Procedure
-		1. MySQL create proicedure
+		1. create procedure in MySQL example
+			CREATE DEFINER=`root`@`localhost` PROCEDURE `get_department_doctors`(
+    IN p_dept VARCHAR(255)
+)
+BEGIN
+    SELECT * FROM practitioner WHERE emp_department = p_dept;
+END
+
 		2. Create NamedStoredPRocedure in Entity class
 		3. Using JPQL call the procedure
 
@@ -436,4 +443,33 @@ http://localhost:8081/PatientRM_war/enroll?patientId=drftgyhu7890&patientName=Su
 	one to many
 	many to one
 	many to many
+
+
+
+
+	task:
+	Customer: username, name, email, aadhaar, monthlyIncome
+	Criteria functionalities:
+		1. display all customers
+		2. monthlyIncome 25000 to 40000
+		3. display customer who are all belong having gmail accounts
+	
+
+
+	Inheritance:
+		single: parent table has all its property and derived tables property
+		table_per_class: only derived tables can be found with parent table columns within it self
+		joined: parent table contains its common property shared with derived table, where as derived tables will contains only derived properties as column
+
+
+
+
+
+	replacement jdbc by Hibernate in our web application
+
+
+
+
+
+
 
