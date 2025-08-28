@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div th:if="${msg}">
+        <p th:text="${msg}"></p>
+    </div>
+    <form th:action="@{'/insure/open'}" th:method="post" th:object="${obj}">
+        <input type="text" name="schemeName"/>
+        <select name="schemeType">
+            <option>Personal</option>
+            <option>Vehicle</option>
+            <option>Travel</option>
+            <option>Term</option>
+            <option>Health</option>
+        </select>
+        <input type="text" name="maturityAmount" />
+        <input type="text" name="duration" />
+        <input type="text" name="premium" />
+        <input type="submit" value="Open New Scheme" />
+    </form>
+</body>
+</html>

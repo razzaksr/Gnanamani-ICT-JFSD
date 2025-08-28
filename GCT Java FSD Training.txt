@@ -468,6 +468,49 @@ END
 	replacement jdbc by Hibernate in our web application
 
 
+Spring Framework:
+	Inversion Control		>> container
+	Dependency injection	>> @Autowired
+
+	Spring Core		>> console app
+	Spring Web/MVC	>> Web app
+		Controller		>> HTML response
+		RestController	>> JOSN response
+		Service		>> middleware/ DAO
+		Repository	>> Hibernate
+		Entity		>> Hibernate
+	Spring Thymeleaf	>> Front end(HTML)
+
+			${}	object
+			*{}	attribute
+			@{}	nav
+
+
+	Spring JDBC		>> database 
+
+
+	
+Project:
+	start.spring.io	>> Spring Initializer
+	IntelliJ Ultimate
+	Spring Tool Suite
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
 
 
 
