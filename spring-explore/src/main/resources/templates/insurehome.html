@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View All Policies</title>
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Policy Name</th><th>Policy Type</th><th>Premium</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="policy : ${policies}">
+                <td th:text="${policy.schemeName}"></td>
+                <td th:text="${policy.schemeType}"></td>
+                <td th:text="${policy.premium}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import java.util.List;
+
 // Controller always respond html page
 @Controller
 @RequestMapping("/insure")
@@ -31,5 +33,11 @@ public class InsuranceApi {
         else
             model.addAttribute("msg","New Insurance not introduced");
         return "redirect:/insure/new";
+    }
+    @GetMapping("/view")
+    public String readAllInsurance(Model model){
+        List<Insurance> obj = service.implementFindAll();
+        model.addAttribute("policies",obj);
+        return "insurehome";
     }
 }
