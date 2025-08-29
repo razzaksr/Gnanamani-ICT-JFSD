@@ -9,6 +9,7 @@
         <thead>
             <tr>
                 <th>Policy Name</th><th>Policy Type</th><th>Premium</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -16,6 +17,9 @@
                 <td th:text="${policy.schemeName}"></td>
                 <td th:text="${policy.schemeType}"></td>
                 <td th:text="${policy.premium}"></td>
+                <td>
+                    <a th:href="@{'/insure/edit/'+${policy.insuranceId}}">Edit</a>
+                </td>
             </tr>
         </tbody>
     </table>
