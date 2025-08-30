@@ -1,0 +1,30 @@
+@url = http://localhost:8082/rest
+GET {{url}}/view
+
+###
+
+POST {{url}}/open
+Content-Type: application/json
+
+{
+    "schemeName":"Ifko Health",
+    "schemeType":"Health",
+    "maturityAmount":0,
+    "duration":0,
+    "premium":1
+}
+
+###
+
+PUT {{url}}/update
+Content-Type: application/json
+
+{
+    "insuranceId": 4,
+    "schemeName": "8765678",
+    "schemeType": "Travel",
+    "maturityAmount": 260000.0,
+    "duration": 10,
+    "premium": 600
+}
+

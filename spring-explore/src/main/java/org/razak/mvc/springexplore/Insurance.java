@@ -4,16 +4,27 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 
 @Entity
 public class Insurance {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int insuranceId;
+    @NotNull(message = "Scheme Name is required")
+    @Pattern(regexp = "^[A-Za-z ]{3,}$",message = "Invalid Scheme name")
     private String schemeName;
+    @NotNull(message = "Scheme type is mandate")
+    @Pattern(regexp = "^[A-Za-z ]{3,}$",message = "Invalid Scheme type")
     private String schemeType;
+    @NotNull(message = "Maturity amount is mandate")
+    @Min(value = 1, message = "Invalid maturity amount")
     private double maturityAmount;
+    @Min(value = 1, message = "Invalid duration")
     private int duration;
+    @Min(value = 1, message = "Invalid premium amount")
     private int premium;
 
     public Insurance() {
