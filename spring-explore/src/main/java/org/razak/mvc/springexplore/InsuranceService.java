@@ -19,4 +19,7 @@ public class InsuranceService {
     public Optional<Insurance> implementFindById(int id){
         return remote.findById(id);
     }
+    public void implementDeleteById(int id){
+        remote.deleteById(id);
+    }
 }

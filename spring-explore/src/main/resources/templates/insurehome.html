@@ -5,6 +5,9 @@
     <title>View All Policies</title>
 </head>
 <body>
+    <a th:href="@{'/insure/new'}">
+        <h3>Introduce New Insurance</h3>
+    </a>
     <table>
         <thead>
             <tr>
@@ -19,6 +22,7 @@
                 <td th:text="${policy.premium}"></td>
                 <td>
                     <a th:href="@{'/insure/edit/'+${policy.insuranceId}}">Edit</a>
+                    <a th:href="@{'/insure/remove/'+${policy.insuranceId}}">Delete</a>
                 </td>
             </tr>
         </tbody>
