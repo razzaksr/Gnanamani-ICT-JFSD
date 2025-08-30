@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Filters</title>
+</head>
+<body>
+    <div th:replace="navigations :: menu"></div>
+    <h1>Maturity Between Search</h1>
+    <form th:action="@{'/insure/filters/amount'}" th:method="post">
+        <input type="text" name="start"/>
+        <input type="text" name="end"/>
+        <input type="submit" value="Filter">
+    </form>
+    <h1>Name Like Search</h1>
+    <form th:action="@{'/insure/filters/names'}" th:method="get">
+        <input type="text" name="search"/>
+        <input type="submit" value="Filter">
+    </form>
+    <h1>Types Like Search</h1>
+    <form th:action="@{'/insure/filters/types'}" th:method="get">
+        <input type="text" name="search"/>
+        <input type="submit" value="Filter">
+    </form>
+    <h1>Combination of Premium and Duration Search</h1>
+    <form th:action="@{'/insure/filters/pretime'}" th:method="get">
+        <input type="text" name="premium"/>
+        <input type="text" name="duration"/>
+        <input type="submit" value="Filter">
+    </form>
+</body>
+</html>

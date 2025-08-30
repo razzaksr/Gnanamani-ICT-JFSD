@@ -5,9 +5,7 @@
     <title>Title</title>
 </head>
 <body>
-    <div th:if="${msg}">
-        <p th:text="${msg}"></p>
-    </div>
+    <div th:replace="navigations :: menu"></div>
     <form th:action="@{'/insure/open'}" th:method="post" th:object="${obj}">
         <input type="text" name="schemeName"/>
         <select name="schemeType">

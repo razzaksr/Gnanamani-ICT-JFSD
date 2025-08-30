@@ -49,4 +49,32 @@ public class InsuranceApi {
         service.implementDeleteById(key);
         return "redirect:/insure/view";
     }
+    @GetMapping("/shortlist")
+    public String shortlist(){
+        return "filters";
+    }
+    @PostMapping("/filters/amount")
+    public String readAllInsurance(Model model,@RequestParam double start, @RequestParam double end){
+        List<Insurance> obj = service.implementFindAllByMaturityAmountBetween(start, end);
+        model.addAttribute("policies",obj);
+        return "insurehome";
+    }
+    @GetMapping("/filters/names")
+    public String readAllNames(Model model,@RequestParam String search){
+        List<Insurance> obj = service.implemenetByOwn(search);
+        model.addAttribute("policies",obj);
+        return "insurehome";
+    }
+    @GetMapping("/filters/types")
+    public String readAllTypes(Model model,@RequestParam String search){
+        List<Insurance> obj = service.implementFindAllBySchemeType(search);
+        model.addAttribute("policies",obj);
+        return "insurehome";
+    }
+    @GetMapping("/filters/pretime")
+    public String readAllNames(Model model,@RequestParam int premium, @RequestParam int duration){
+        List<Insurance> obj = service.implementFindAllByPremiumGreaterThanEqualAndDurationEquals(premium, duration);
+        model.addAttribute("policies",obj);
+        return "insurehome";
+    }
 }

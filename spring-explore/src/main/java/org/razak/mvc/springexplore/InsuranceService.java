@@ -22,4 +22,16 @@ public class InsuranceService {
     public void implementDeleteById(int id){
         remote.deleteById(id);
     }
+    public List<Insurance> implementFindAllByMaturityAmountBetween(double start, double end){
+        return remote.findAllByMaturityAmountBetween(start, end);
+    }
+    public List<Insurance> implemenetByOwn(String query){
+        return remote.generateByLike(query);
+    }
+    public List<Insurance> implementFindAllBySchemeType(String type){
+        return remote.findAllBySchemeType(type);
+    }
+    public List<Insurance> implementFindAllByPremiumGreaterThanEqualAndDurationEquals(int prem, int dur){
+        return remote.findAllByPremiumGreaterThanEqualAndDurationEquals(prem, dur);
+    }
 }
